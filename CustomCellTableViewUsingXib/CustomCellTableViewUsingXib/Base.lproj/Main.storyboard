@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aoH-Zw-9sQ">
+                                <rect key="frame" x="0.0" y="176" width="600" height="424"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="HVq-IB-fZ2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wxc-XN-kae"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter First Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hus-C8-Y7H">
+                                <rect key="frame" x="126" y="27" width="130" height="30"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Hw0-RA-mkE"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Mid Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjs-9U-BlQ">
+                                <rect key="frame" x="125" y="64" width="126" height="30"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TX7-Dt-eiW"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Last Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-hR-tCT">
+                                <rect key="frame" x="126" y="100" width="129" height="30"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="z3q-aG-AEr"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rf-IO-ATh">
+                                <rect key="frame" x="10" y="30" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Middle Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3F-O0-0mw">
+                                <rect key="frame" x="10" y="61" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIg-Mx-y4B">
+                                <rect key="frame" x="10" y="92" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zV-G5-lMA">
+                                <rect key="frame" x="126" y="138" width="32" height="30"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nfe-qn-cu5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5rf-IO-ATh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="3ZD-EX-4SM"/>
+                            <constraint firstItem="aoH-Zw-9sQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="77k-W2-vsM"/>
+                            <constraint firstItem="c3F-O0-0mw" firstAttribute="top" secondItem="5rf-IO-ATh" secondAttribute="bottom" constant="10" id="FXH-lb-nrU"/>
+                            <constraint firstItem="5zV-G5-lMA" firstAttribute="top" secondItem="eZz-hR-tCT" secondAttribute="bottom" constant="8" id="Jcm-h1-ALU"/>
+                            <constraint firstItem="sIg-Mx-y4B" firstAttribute="top" secondItem="c3F-O0-0mw" secondAttribute="bottom" constant="10" id="JyH-bO-JnJ"/>
+                            <constraint firstItem="hus-C8-Y7H" firstAttribute="leading" secondItem="5rf-IO-ATh" secondAttribute="trailing" constant="27" id="V4E-4P-3TA"/>
+                            <constraint firstItem="Fjs-9U-BlQ" firstAttribute="leading" secondItem="c3F-O0-0mw" secondAttribute="trailing" constant="8" id="WAL-11-nlB"/>
+                            <constraint firstItem="Fjs-9U-BlQ" firstAttribute="top" secondItem="hus-C8-Y7H" secondAttribute="bottom" constant="7" id="ZXP-If-abr"/>
+                            <constraint firstItem="hus-C8-Y7H" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="7" id="cOg-xH-Dc1"/>
+                            <constraint firstItem="5rf-IO-ATh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="cn6-yX-KDu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aoH-Zw-9sQ" secondAttribute="bottom" id="fYX-8G-Y5p"/>
+                            <constraint firstItem="sIg-Mx-y4B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="g3s-8g-FPK"/>
+                            <constraint firstItem="eZz-hR-tCT" firstAttribute="top" secondItem="Fjs-9U-BlQ" secondAttribute="bottom" constant="6" id="iAm-9O-Lab"/>
+                            <constraint firstItem="aoH-Zw-9sQ" firstAttribute="top" secondItem="5zV-G5-lMA" secondAttribute="bottom" constant="8" id="k0w-GJ-1xo"/>
+                            <constraint firstAttribute="trailing" secondItem="aoH-Zw-9sQ" secondAttribute="trailing" id="oBD-a4-f48"/>
+                            <constraint firstItem="5zV-G5-lMA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="126" id="sIl-tY-A1N"/>
+                            <constraint firstItem="eZz-hR-tCT" firstAttribute="leading" secondItem="sIg-Mx-y4B" secondAttribute="trailing" constant="28" id="tLJ-UO-pDF"/>
+                            <constraint firstItem="c3F-O0-0mw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="xe2-YD-EFS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addNewName" destination="5zV-G5-lMA" id="lrX-eo-VnO"/>
+                        <outlet property="firstName" destination="hus-C8-Y7H" id="ihn-tu-Zdg"/>
+                        <outlet property="lastName" destination="eZz-hR-tCT" id="bLB-Pd-7nL"/>
+                        <outlet property="midName" destination="Fjs-9U-BlQ" id="Tpt-di-519"/>
+                        <outlet property="myTable" destination="aoH-Zw-9sQ" id="kPD-5h-RKY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,25 @@
+Last login: Mon Aug 24 15:05:26 on console
+ac-mac-3s-Mac-mini:~ milan.mia$ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures
+ac-mac-3s-Mac-mini:~ milan.mia$ cd Doc
+-bash: cd: Doc: No such file or directory
+ac-mac-3s-Mac-mini:~ milan.mia$ cd Documents/
+ac-mac-3s-Mac-mini:Documents milan.mia$ ls
+BJIT-PROGG-AUG15.csv	Exercise3.java		firstGit
+CppTest			Exercise4.java		server
+Ex_Solution4		Exercise5.java		solution2.java
+Ex_solution2.java	FirstIOSApp		solution3.rtf
+Ex_solution3.java	Git-Project		test
+Ex_solution5.java	Quiz			test_OC
+Exercise		Training		workspace
+Exercise1.java		Uva
+Exercise2.java		client
+ac-mac-3s-Mac-mini:Documents milan.mia$ cd Uva/
+ac-mac-3s-Mac-mini:Uva milan.mia$ ls
+Uva		Uva.xcodeproj
+ac-mac-3s-Mac-mini:Uva milan.mia$ cd Uva
+ac-mac-3s-Mac-mini:Uva milan.mia$ ls
+a.out		main.cpp
+ac-mac-3s-Mac-mini:Uva milan.mia$ touch input.txt
+ac-mac-3s-Mac-mini:Uva milan.mia$ touch output.txt

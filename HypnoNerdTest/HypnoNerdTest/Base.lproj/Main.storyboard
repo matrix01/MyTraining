@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Hypnosis View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="hypnosisView" id="BYZ-38-t0r" customClass="HypnosisViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Reminder View Controller-->
+        <scene sceneID="J8m-Hn-fxD">
+            <objects>
+                <viewController storyboardIdentifier="reminderView" id="9f5-m5-tsr" customClass="ReminderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YMe-80-3Bf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z9x-nq-ceO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ojt-QV-19L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-ZH-9bJ">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="464075750.174016">
+                                    <!--2015-09-16 05:55:50 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09P-FQ-AOo">
+                                <rect key="frame" x="251" y="432" width="99" height="30"/>
+                                <state key="normal" title="Add Reminder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addReminder:" destination="9f5-m5-tsr" eventType="touchUpInside" id="gqg-gn-LnY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ipg-ZH-9bJ" firstAttribute="leading" secondItem="ojt-QV-19L" secondAttribute="leading" id="0YQ-tn-YoX"/>
+                            <constraint firstAttribute="trailing" secondItem="Ipg-ZH-9bJ" secondAttribute="trailing" id="1At-yu-8TK"/>
+                            <constraint firstAttribute="centerY" secondItem="Ipg-ZH-9bJ" secondAttribute="centerY" id="IMJ-dZ-EUO"/>
+                            <constraint firstAttribute="centerX" secondItem="09P-FQ-AOo" secondAttribute="centerX" id="aLf-Qx-r3u"/>
+                            <constraint firstItem="09P-FQ-AOo" firstAttribute="top" secondItem="Ipg-ZH-9bJ" secondAttribute="bottom" constant="51" id="spw-RJ-wTq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addReminderButton" destination="09P-FQ-AOo" id="g9W-fK-snC"/>
+                        <outlet property="datePicker" destination="Ipg-ZH-9bJ" id="Cxk-Ma-UwP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mt4-TM-5T7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918" y="321"/>
+        </scene>
+        <!--Another View Controller-->
+        <scene sceneID="g8H-Ax-Hod">
+            <objects>
+                <viewController storyboardIdentifier="anotherView" id="NE6-Mi-xBi" customClass="AnotherViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J1Z-HY-Pug"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gp9-9D-XLe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="odo-HV-TfI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbE-xO-IMd">
+                                <rect key="frame" x="280" y="290" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="bbE-xO-IMd" secondAttribute="centerY" id="kW9-7V-Lmh"/>
+                            <constraint firstAttribute="centerX" secondItem="bbE-xO-IMd" secondAttribute="centerX" id="smH-34-JVw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYH-KW-jh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="321"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Hypnosis View Controller-->
+        <scene sceneID="BQy-52-zll">
+            <objects>
+                <viewController storyboardIdentifier="hypnosisView" id="qEV-sT-I9G" customClass="BNRHypnosisViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qjE-V1-iyk"/>
+                        <viewControllerLayoutGuide type="bottom" id="fD3-A3-cgO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nPB-Fg-wte">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuP-od-FDv">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="qEV-sT-I9G" eventType="touchUpInside" id="Ixm-7i-kPZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="NuP-od-FDv" secondAttribute="centerY" id="F6b-yi-3Zv"/>
+                            <constraint firstAttribute="centerX" secondItem="NuP-od-FDv" secondAttribute="centerX" id="k70-Kb-IUY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="F6b-yi-3Zv" id="PAF-Rj-Vld"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xho-hN-zgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="295" y="129"/>
+        </scene>
+        <!--Reminder View Controller-->
+        <scene sceneID="bDt-zf-VWf">
+            <objects>
+                <viewController storyboardIdentifier="reminderView" id="1IP-pA-Eg7" customClass="BNRReminderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n6e-QJ-AZC"/>
+                        <viewControllerLayoutGuide type="bottom" id="gAq-bi-zev"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Qb-Qu-gIP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-iE-yxU">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="464008187.56779999">
+                                    <!--2015-09-15 11:09:47 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKg-b6-tgd">
+                                <rect key="frame" x="253" y="444" width="94" height="30"/>
+                                <state key="normal" title="AddReminder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addReminder:" destination="1IP-pA-Eg7" eventType="touchUpInside" id="E3a-hY-dfV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hKg-b6-tgd" secondAttribute="centerX" id="ACv-eh-yJ3"/>
+                            <constraint firstAttribute="trailing" secondItem="Dyk-iE-yxU" secondAttribute="trailing" id="BOD-3e-AQe"/>
+                            <constraint firstItem="hKg-b6-tgd" firstAttribute="top" secondItem="Dyk-iE-yxU" secondAttribute="bottom" constant="63" id="WC0-NF-eIu"/>
+                            <constraint firstItem="Dyk-iE-yxU" firstAttribute="leading" secondItem="8Qb-Qu-gIP" secondAttribute="leading" id="Wpi-Hh-zug"/>
+                            <constraint firstAttribute="centerY" secondItem="Dyk-iE-yxU" secondAttribute="centerY" id="ka5-XR-aOm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Dyk-iE-yxU" id="ZmI-vU-24E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggJ-Jq-7MC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="129"/>
+        </scene>
+    </scenes>
+</document>

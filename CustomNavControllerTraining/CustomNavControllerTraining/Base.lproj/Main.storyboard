@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Item View Controller-->
+        <scene sceneID="rWV-Mi-JYH">
+            <objects>
+                <viewController storyboardIdentifier="itemView" id="ElX-BN-bZY" customClass="BNRItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DwM-Uo-HKX"/>
+                        <viewControllerLayoutGuide type="bottom" id="dKg-ys-TtZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kmy-mZ-SNB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgI-P7-NIH">
+                                <rect key="frame" x="285" y="39" width="30" height="30"/>
+                                <state key="normal" title="First">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="firstButton:" destination="ElX-BN-bZY" eventType="touchUpInside" id="fra-jE-MQq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouw-8k-uBI">
+                                <rect key="frame" x="274" y="124" width="53" height="30"/>
+                                <state key="normal" title="Second">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="secondButton:" destination="ElX-BN-bZY" eventType="touchUpInside" id="akL-Au-JgF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ouw-8k-uBI" secondAttribute="centerX" id="Fwr-VM-zFo"/>
+                            <constraint firstItem="PgI-P7-NIH" firstAttribute="top" secondItem="DwM-Uo-HKX" secondAttribute="bottom" constant="19" id="tEb-nu-gD6"/>
+                            <constraint firstItem="Ouw-8k-uBI" firstAttribute="top" secondItem="PgI-P7-NIH" secondAttribute="bottom" constant="55" id="tGC-xl-W7L"/>
+                            <constraint firstAttribute="centerX" secondItem="PgI-P7-NIH" secondAttribute="centerX" id="u2O-ps-CWU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b3-YJ-KeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="193"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="GJt-Zn-Aos">
+            <objects>
+                <viewController storyboardIdentifier="detailView" id="S0a-Se-niB" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MaB-cM-LdT"/>
+                        <viewControllerLayoutGuide type="bottom" id="fI8-oe-mXm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UpD-ZZ-FxP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2v-MJ-sf8">
+                                <rect key="frame" x="279" y="60" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="P2v-MJ-sf8" secondAttribute="centerX" id="TZl-rf-mi7"/>
+                            <constraint firstItem="P2v-MJ-sf8" firstAttribute="top" secondItem="MaB-cM-LdT" secondAttribute="bottom" constant="40" id="cZ5-QB-rZO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pushCounter" destination="P2v-MJ-sf8" id="9gg-W7-HTV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2v-5a-C71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="193"/>
+        </scene>
+    </scenes>
+</document>
