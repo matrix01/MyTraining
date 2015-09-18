@@ -7,7 +7,6 @@
 //
 
 #import "BNRItemViewController.h"
-#import "DetailViewController.h"
 @interface BNRItemViewController (){
     DetailViewController *dvc;
 }
@@ -21,8 +20,12 @@
     self.navigationItem.title = @"Item View";
     dvc = (DetailViewController*) [self.storyboard
         instantiateViewControllerWithIdentifier:@"detailView"];
+    dvc.myDelegate= self;
 }
-
+-(void)printMyName:(NSString*) myName AndAge:(int)age{
+    self.myLabel.text = @"Milan Mia";
+    NSLog(@"My Name is %@ And Age: %d",myName, age);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

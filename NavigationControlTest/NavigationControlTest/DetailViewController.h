@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@protocol CustomProtocolTest <NSObject>
+@required
+-(void) printMyName:(NSString*) myName AndAge:(int)age;
+@optional
+-(void) printFriendsName;
+@end
 
+@interface DetailViewController : UIViewController<UITextFieldDelegate>{
+    UITextField *textFieldTest;
+}
+- (IBAction)printName:(UIButton *)sender;
+@property(nonatomic, weak)id <CustomProtocolTest> myDelegate;
 @end

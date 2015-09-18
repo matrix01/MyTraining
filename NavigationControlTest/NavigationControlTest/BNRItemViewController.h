@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BNRItemViewController : UIViewController
+#import "DetailViewController.h"
+@interface BNRItemViewController : UIViewController<CustomProtocolTest>
 - (IBAction)firstButton:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *myLabel;
 - (IBAction)secondButton:(UIButton *)sender;
 @end

@@ -17,13 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor: [UIColor grayColor]];
+    [self.view setBackgroundColor: [UIColor cyanColor]];
     self.navigationItem.title =@"Detail View";
 
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushViewController)];
     nvc = (BNRNextViewController*)[self.storyboard
                                    instantiateViewControllerWithIdentifier:@"nextView"];
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+    /*Text field*/
+    textFieldTest = [[UITextField alloc]initWithFrame:CGRectMake(100, 100, 100, 30)];
+    [textFieldTest setBackgroundColor:[UIColor redColor]];
+    textFieldTest.delegate=self;
+    [self.view addSubview:textFieldTest];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 - (void)popViewController {
     [self.navigationController popViewControllerAnimated:YES];
@@ -52,4 +62,7 @@
 }
 */
 
+- (IBAction)printName:(UIButton *)sender {
+    [self.myDelegate printMyName:@"Milan Mia" AndAge:24];
+}
 @end

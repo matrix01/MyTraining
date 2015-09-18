@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BNRNextViewController : UIViewController
+#import "BNRNextViewController.h"
+@interface BNRNextViewController : UIViewController<CustomProtocolTest>
 
 @end

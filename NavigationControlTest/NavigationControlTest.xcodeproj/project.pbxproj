@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C44E46E1BAAD7A900F6089C /* CustomProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomProtocol.h; sourceTree = "<group>"; };
 		8CB6C2241BAA719300F28A32 /* NavigationControlTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationControlTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB6C2281BAA719300F28A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB6C2291BAA719300F28A32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,9 +91,10 @@
 				8CB6C22B1BAA719300F28A32 /* AppDelegate.h */,
 				8CB6C22C1BAA719300F28A32 /* AppDelegate.m */,
 				8CB6C2501BAA764800F28A32 /* DetailViewController.h */,
+				8CB6C2511BAA764800F28A32 /* DetailViewController.m */,
+				8C44E46E1BAAD7A900F6089C /* CustomProtocol.h */,
 				8CB6C2531BAA942700F28A32 /* BNRNextViewController.h */,
 				8CB6C2541BAA942700F28A32 /* BNRNextViewController.m */,
-				8CB6C2511BAA764800F28A32 /* DetailViewController.m */,
 				8CB6C24D1BAA721C00F28A32 /* BNRItemViewController.h */,
 				8CB6C24E1BAA721C00F28A32 /* BNRItemViewController.m */,
 				8CB6C2311BAA719300F28A32 /* Main.storyboard */,
@@ -430,6 +432,7 @@
 				8CB6C2491BAA719300F28A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CB6C24A1BAA719300F28A32 /* Build configuration list for PBXNativeTarget "NavigationControlTestTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +441,7 @@
 				8CB6C24C1BAA719300F28A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
