@@ -19,5 +19,5 @@
     UITextField *textFieldTest;
 }
 - (IBAction)printName:(UIButton *)sender;
-@property(nonatomic, weak)id <CustomProtocolTest> myDelegate;
+@property(nonatomic, assign)id <CustomProtocolTest> myDelegate;
 @end

@@ -8,24 +8,35 @@
 
 #import "BNRNextViewController.h"
 
-@interface BNRNextViewController ()
+@interface BNRNextViewController (){
+    DetailViewController *dvc;
+}
 
 @end
 
 @implementation BNRNextViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor brownColor]];
-    
+    dvc= (DetailViewController*)[self.storyboard
+                                  instantiateViewControllerWithIdentifier:@"detailView"];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushViewController)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    dvc.myDelegate =self;
 }
-
+-(void)pushViewController{
+    [self.navigationController pushViewController:dvc animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
+-(void)printMyName:(NSString *)myName AndAge:(int)age{
+    NSLog(@"Print from Next View controller %@ %d", myName, age);
+}
+-(void)printFriendsName{
+    NSLog(@"Test");
+}
 /*
 #pragma mark - Navigation
 

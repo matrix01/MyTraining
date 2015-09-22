@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @protocol CustomProtocol <NSObject>
-
+@required
+-(void) printMyName:(NSString*) myName AndAge:(int)age;
+@optional
+-(void) printFriendsName;
 @end

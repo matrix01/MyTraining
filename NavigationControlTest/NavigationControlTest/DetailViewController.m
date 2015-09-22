@@ -7,23 +7,16 @@
 //
 
 #import "DetailViewController.h"
-#import "BNRNextViewController.h"
-@interface DetailViewController (){
-    BNRNextViewController *nvc;
-}
+@interface DetailViewController ()
+
 @end
 
 @implementation DetailViewController
-
+@synthesize myDelegate;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor: [UIColor cyanColor]];
     self.navigationItem.title =@"Detail View";
-
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushViewController)];
-    nvc = (BNRNextViewController*)[self.storyboard
-                                   instantiateViewControllerWithIdentifier:@"nextView"];
-    self.navigationItem.rightBarButtonItem = rightButton;
     
     /*Text field*/
     textFieldTest = [[UITextField alloc]initWithFrame:CGRectMake(100, 100, 100, 30)];
@@ -38,9 +31,7 @@
 - (void)popViewController {
     [self.navigationController popViewControllerAnimated:YES];
 }
--(void)pushViewController{
-    [self.navigationController pushViewController:nvc animated:YES];
-}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.backIndicatorImage=[UIImage imageNamed:@"back"];
@@ -64,5 +55,6 @@
 
 - (IBAction)printName:(UIButton *)sender {
     [self.myDelegate printMyName:@"Milan Mia" AndAge:24];
+    [self.myDelegate printFriendsName];
 }
 @end

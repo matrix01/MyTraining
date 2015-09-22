@@ -7,8 +7,10 @@
 //
 
 #import "BNRItemViewController.h"
+#import "BNRNextViewController.h"
 @interface BNRItemViewController (){
     DetailViewController *dvc;
+    BNRNextViewController *nvc;
 }
 
 @end
@@ -20,6 +22,9 @@
     self.navigationItem.title = @"Item View";
     dvc = (DetailViewController*) [self.storyboard
         instantiateViewControllerWithIdentifier:@"detailView"];
+    
+    nvc = (BNRNextViewController*) [self.storyboard
+                                   instantiateViewControllerWithIdentifier:@"nextView"];
     dvc.myDelegate= self;
 }
 -(void)printMyName:(NSString*) myName AndAge:(int)age{
@@ -38,6 +43,9 @@
     [super viewWillAppear:animated];
     self.navigationItem.title=@"Item View";
 }
+-(void)printFriendsName{
+    NSLog(@"Test11111");
+}
 /*
 #pragma mark - Navigation
 
@@ -49,7 +57,7 @@
 */
 
 - (IBAction)firstButton:(UIButton *)sender {
-    [self.navigationController pushViewController:dvc animated:YES];
+    [self.navigationController pushViewController:nvc animated:YES];
 }
 
 - (IBAction)secondButton:(UIButton *)sender {

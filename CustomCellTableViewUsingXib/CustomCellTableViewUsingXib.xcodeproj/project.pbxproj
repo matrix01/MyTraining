@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C47863D1BAFD6F8006D4689 /* CustomCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47863C1BAFD6F8006D4689 /* CustomCellViewController.m */; };
 		8C7451781BA195CA00C33BAC /* myCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7451771BA195CA00C33BAC /* myCustomCell.m */; };
 		8C84BEDE1BA1459A00724A4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84BEDD1BA1459A00724A4F /* main.m */; };
 		8C84BEE11BA1459A00724A4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84BEE01BA1459A00724A4F /* AppDelegate.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C47863B1BAFD6F8006D4689 /* CustomCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellViewController.h; sourceTree = "<group>"; };
+		8C47863C1BAFD6F8006D4689 /* CustomCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellViewController.m; sourceTree = "<group>"; };
 		8C7451761BA195CA00C33BAC /* myCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myCustomCell.h; sourceTree = "<group>"; };
 		8C7451771BA195CA00C33BAC /* myCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myCustomCell.m; sourceTree = "<group>"; };
 		8C84BED81BA1459A00724A4F /* CustomCellTableViewUsingXib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCellTableViewUsingXib.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +94,8 @@
 				8C84BEE21BA1459A00724A4F /* ViewController.h */,
 				8C84BEE31BA1459A00724A4F /* ViewController.m */,
 				8C84BEE51BA1459A00724A4F /* Main.storyboard */,
+				8C47863B1BAFD6F8006D4689 /* CustomCellViewController.h */,
+				8C47863C1BAFD6F8006D4689 /* CustomCellViewController.m */,
 				8C84BF011BA16DC100724A4F /* myCustomCell.xib */,
 				8C7451761BA195CA00C33BAC /* myCustomCell.h */,
 				8C7451771BA195CA00C33BAC /* myCustomCell.m */,
@@ -231,6 +236,7 @@
 				8C84BEE41BA1459A00724A4F /* ViewController.m in Sources */,
 				8C84BEE11BA1459A00724A4F /* AppDelegate.m in Sources */,
 				8C7451781BA195CA00C33BAC /* myCustomCell.m in Sources */,
+				8C47863D1BAFD6F8006D4689 /* CustomCellViewController.m in Sources */,
 				8C84BEDE1BA1459A00724A4F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

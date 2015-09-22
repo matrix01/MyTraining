@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "BNRItemViewController.h"
-
 @interface AppDelegate ()
 
 @end
@@ -24,7 +23,6 @@
     
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:ivc];
     [self.window setRootViewController:navController];
-    
     [self.window makeKeyAndVisible];
     return YES;
 }
