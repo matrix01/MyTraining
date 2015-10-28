@@ -27,8 +27,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
        [self fetchFeed];
     });
-    [self fetchFeed];
-
 }
 -(void)fetchFeed {
     NSString *requestString = @"http://bookapi.bignerdranch.com/courses.json";
