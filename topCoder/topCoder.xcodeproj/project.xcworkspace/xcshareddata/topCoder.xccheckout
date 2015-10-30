@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>DD93D8C9-C734-4850-BEAD-4247BC87D7F6</string>
+	<string>6D3B4C1F-9E21-4538-BC50-3DBD473941AC</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Concurrency</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D97E25A6B3F4DDA1AE9B3AC5A1B893922AB0810B</key>
 		<string>https://github.com/matrix01/MyTraining.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Concurrency/Concurrency.xcodeproj</string>
+	<string>topCoder/topCoder.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D97E25A6B3F4DDA1AE9B3AC5A1B893922AB0810B</key>

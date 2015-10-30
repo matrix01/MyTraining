@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C059FC51BE097DF007FA579 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C059FC41BE097DF007FA579 /* main.m */; };
-		8C059FCD1BE0A1CB007FA579 /* PrimeFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C059FCC1BE0A1CB007FA579 /* PrimeFinder.m */; };
+		8CBF8BFB1BE32DC80020B07A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF8BFA1BE32DC80020B07A /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8C059FBF1BE097DF007FA579 /* CopyFiles */ = {
+		8CBF8BF51BE32DC70020B07A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8C059FC11BE097DF007FA579 /* Concurrency */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Concurrency; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C059FC41BE097DF007FA579 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8C059FCB1BE0A1CB007FA579 /* PrimeFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimeFinder.h; sourceTree = "<group>"; };
-		8C059FCC1BE0A1CB007FA579 /* PrimeFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimeFinder.m; sourceTree = "<group>"; };
+		8CBF8BF71BE32DC70020B07A /* topCoder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = topCoder; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CBF8BFA1BE32DC80020B07A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C059FBE1BE097DF007FA579 /* Frameworks */ = {
+		8CBF8BF41BE32DC70020B07A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,97 +38,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C059FB81BE097DF007FA579 = {
+		8CBF8BEE1BE32DC70020B07A = {
 			isa = PBXGroup;
 			children = (
-				8C059FC31BE097DF007FA579 /* Concurrency */,
-				8C059FC21BE097DF007FA579 /* Products */,
+				8CBF8BF91BE32DC70020B07A /* topCoder */,
+				8CBF8BF81BE32DC70020B07A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8C059FC21BE097DF007FA579 /* Products */ = {
+		8CBF8BF81BE32DC70020B07A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C059FC11BE097DF007FA579 /* Concurrency */,
+				8CBF8BF71BE32DC70020B07A /* topCoder */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C059FC31BE097DF007FA579 /* Concurrency */ = {
+		8CBF8BF91BE32DC70020B07A /* topCoder */ = {
 			isa = PBXGroup;
 			children = (
-				8C059FC41BE097DF007FA579 /* main.m */,
-				8C059FCB1BE0A1CB007FA579 /* PrimeFinder.h */,
-				8C059FCC1BE0A1CB007FA579 /* PrimeFinder.m */,
+				8CBF8BFA1BE32DC80020B07A /* main.cpp */,
 			);
-			path = Concurrency;
+			path = topCoder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C059FC01BE097DF007FA579 /* Concurrency */ = {
+		8CBF8BF61BE32DC70020B07A /* topCoder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C059FC81BE097E0007FA579 /* Build configuration list for PBXNativeTarget "Concurrency" */;
+			buildConfigurationList = 8CBF8BFE1BE32DC80020B07A /* Build configuration list for PBXNativeTarget "topCoder" */;
 			buildPhases = (
-				8C059FBD1BE097DF007FA579 /* Sources */,
-				8C059FBE1BE097DF007FA579 /* Frameworks */,
-				8C059FBF1BE097DF007FA579 /* CopyFiles */,
+				8CBF8BF31BE32DC70020B07A /* Sources */,
+				8CBF8BF41BE32DC70020B07A /* Frameworks */,
+				8CBF8BF51BE32DC70020B07A /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Concurrency;
-			productName = Concurrency;
-			productReference = 8C059FC11BE097DF007FA579 /* Concurrency */;
+			name = topCoder;
+			productName = topCoder;
+			productReference = 8CBF8BF71BE32DC70020B07A /* topCoder */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8C059FB91BE097DF007FA579 /* Project object */ = {
+		8CBF8BEF1BE32DC70020B07A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
-					8C059FC01BE097DF007FA579 = {
+					8CBF8BF61BE32DC70020B07A = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
-			buildConfigurationList = 8C059FBC1BE097DF007FA579 /* Build configuration list for PBXProject "Concurrency" */;
+			buildConfigurationList = 8CBF8BF21BE32DC70020B07A /* Build configuration list for PBXProject "topCoder" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 8C059FB81BE097DF007FA579;
-			productRefGroup = 8C059FC21BE097DF007FA579 /* Products */;
+			mainGroup = 8CBF8BEE1BE32DC70020B07A;
+			productRefGroup = 8CBF8BF81BE32DC70020B07A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C059FC01BE097DF007FA579 /* Concurrency */,
+				8CBF8BF61BE32DC70020B07A /* topCoder */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C059FBD1BE097DF007FA579 /* Sources */ = {
+		8CBF8BF31BE32DC70020B07A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C059FC51BE097DF007FA579 /* main.m in Sources */,
-				8C059FCD1BE0A1CB007FA579 /* PrimeFinder.m in Sources */,
+				8CBF8BFB1BE32DC80020B07A /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8C059FC61BE097DF007FA579 /* Debug */ = {
+		8CBF8BFC1BE32DC80020B07A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -173,7 +167,7 @@
 			};
 			name = Debug;
 		};
-		8C059FC71BE097DF007FA579 /* Release */ = {
+		8CBF8BFD1BE32DC80020B07A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,14 +202,14 @@
 			};
 			name = Release;
 		};
-		8C059FC91BE097E0007FA579 /* Debug */ = {
+		8CBF8BFF1BE32DC80020B07A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		8C059FCA1BE097E0007FA579 /* Release */ = {
+		8CBF8C001BE32DC80020B07A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -225,24 +219,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C059FBC1BE097DF007FA579 /* Build configuration list for PBXProject "Concurrency" */ = {
+		8CBF8BF21BE32DC70020B07A /* Build configuration list for PBXProject "topCoder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C059FC61BE097DF007FA579 /* Debug */,
-				8C059FC71BE097DF007FA579 /* Release */,
+				8CBF8BFC1BE32DC80020B07A /* Debug */,
+				8CBF8BFD1BE32DC80020B07A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C059FC81BE097E0007FA579 /* Build configuration list for PBXNativeTarget "Concurrency" */ = {
+		8CBF8BFE1BE32DC80020B07A /* Build configuration list for PBXNativeTarget "topCoder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C059FC91BE097E0007FA579 /* Debug */,
-				8C059FCA1BE097E0007FA579 /* Release */,
+				8CBF8BFF1BE32DC80020B07A /* Debug */,
+				8CBF8C001BE32DC80020B07A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8C059FB91BE097DF007FA579 /* Project object */;
+	rootObject = 8CBF8BEF1BE32DC70020B07A /* Project object */;
 }
