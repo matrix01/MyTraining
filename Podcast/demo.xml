@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  
+  <channel>
+    <title>Demo podcast</title>
+    <description>It's a demo podcast. Created by Milan</description>
+    <link>http://www.bjitgroup.com</link>
+    <language>en-us</language>
+    <copyright>Copyright 2001</copyright>
+    <pubDate>Thu, 05 Nov 2015 11:00:00 GMT</pubDate>
+    <docs>http://www.bjitgroup.com</docs>
+    <webMaster>milan.mia@bjitgroup.com (Milan Mia)</webMaster>
+
+    <itunes:author>Milan mia</itunes:author>
+    <itunes:subtitle> This is a demo podcast. This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast. </itunes:subtitle>
+    <itunes:summary>This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.This is a demo podcast.</itunes:summary>
+    <itunes:owner>
+      <itunes:name>milan</itunes:name>
+      <itunes:email>milan.mia@bjitgroup.com</itunes:email>
+    </itunes:owner>
+
+    <itunes:explicit>No</itunes:explicit>
+    <itunes:image href="http://images8.alphacoders.com/431/431202.jpg"/>
+
+    <itunes:category text="Technology">
+      <itunes:category text="Podcasting"/>
+    </itunes:category>
+
+    <item>
+      <title>Shake Shake Shake Your Spices</title>
+      <itunes:author>John Doe</itunes:author>
+      <itunes:subtitle>A short primer on table spices</itunes:subtitle>
+      <itunes:summary>This week we talk about salt and pepper shakers, comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party!</itunes:summary>
+      <itunes:image href="http://images8.alphacoders.com/431/431202.jpg" />
+      <enclosure url="https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/ViewPG_iPhoneOS.pdf" length="3754849" type="application/pdf" />
+      <pubDate>Thu, 05 Nov 2015 19:00:00 GMT</pubDate>
+    </item>
+  </channel>
+
+</rss>
