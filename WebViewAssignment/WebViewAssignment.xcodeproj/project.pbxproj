@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C5E291E1BF18D7500AB4AC4 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5E291D1BF18D7500AB4AC4 /* PageViewController.m */; };
 		8CC6C5161BF0AB49003EADE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6C5151BF0AB49003EADE8 /* main.m */; };
 		8CC6C5191BF0AB49003EADE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6C5181BF0AB49003EADE8 /* AppDelegate.m */; };
 		8CC6C51C1BF0AB49003EADE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6C51B1BF0AB49003EADE8 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C5E291C1BF18D7500AB4AC4 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		8C5E291D1BF18D7500AB4AC4 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		8CC6C5101BF0AB49003EADE8 /* WebViewAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC6C5141BF0AB49003EADE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC6C5151BF0AB49003EADE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				8CC6C5201BF0AB49003EADE8 /* Images.xcassets */,
 				8CC6C5221BF0AB49003EADE8 /* LaunchScreen.xib */,
 				8CC6C5131BF0AB49003EADE8 /* Supporting Files */,
+				8C5E291C1BF18D7500AB4AC4 /* PageViewController.h */,
+				8C5E291D1BF18D7500AB4AC4 /* PageViewController.m */,
 			);
 			path = WebViewAssignment;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				8CC6C51C1BF0AB49003EADE8 /* ViewController.m in Sources */,
 				8CC6C5191BF0AB49003EADE8 /* AppDelegate.m in Sources */,
 				8CC6C5161BF0AB49003EADE8 /* main.m in Sources */,
+				8C5E291E1BF18D7500AB4AC4 /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +355,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kojiro katagiri (HJG5WJ66YJ)";
 				INFOPLIST_FILE = WebViewAssignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "54340e2d-4ff9-4b48-9090-38d013fd033e";
 			};
 			name = Debug;
 		};
@@ -360,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WebViewAssignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +428,7 @@
 				8CC6C5351BF0AB49003EADE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CC6C5361BF0AB49003EADE8 /* Build configuration list for PBXNativeTarget "WebViewAssignmentTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +437,7 @@
 				8CC6C5381BF0AB49003EADE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface ViewController : UIViewController <UIPageViewControllerDataSource> {
+    NSArray *pageUrl;
+    NSInteger lastIndex;
+}
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *prevButton;
+@property (strong, nonatomic) UIPageViewController *pageVC;
 @end
 
