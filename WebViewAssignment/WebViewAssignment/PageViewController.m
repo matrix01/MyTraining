@@ -22,7 +22,15 @@
     }
     return self;
 }
-
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    if(self.navigationController.navigationBar.translucent == YES)
+    {
+        
+        _webView.scrollView.contentOffset = CGPointMake(_webView.frame.origin.x, _webView.frame.origin.y - 54);
+        
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSURL *url = [NSURL URLWithString:_urlString];

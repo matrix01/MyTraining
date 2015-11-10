@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>5C671509-A870-4562-8E33-2C8442D000CD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>WebViewAssignment</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D97E25A6B3F4DDA1AE9B3AC5A1B893922AB0810B</key>
 		<string>https://github.com/matrix01/MyTraining.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WebViewAssignment/WebViewAssignment.xcodeproj/project.xcworkspace</string>
+	<string>WebViewAssignment/WebViewAssignment.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D97E25A6B3F4DDA1AE9B3AC5A1B893922AB0810B</key>
