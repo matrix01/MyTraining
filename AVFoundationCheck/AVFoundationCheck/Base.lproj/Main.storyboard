@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WC0-yQ-45k">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ygk-ao-9gZ">
+            <objects>
+                <navigationController id="WC0-yQ-45k" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SKa-yn-ZsB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pb3-lI-uax" kind="relationship" relationship="rootViewController" id="Q5U-DV-WGn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tje-c2-nET" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-457" y="74"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="jrd-pZ-QDc">
+            <objects>
+                <viewController id="pb3-lI-uax" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EFy-BG-TIQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="da3-WH-FI6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q49-gX-uSx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdL-xY-xTc">
+                                <rect key="frame" x="162" y="286" width="90" height="35"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.82745105029999999" green="0.94117653369999998" blue="0.95294123890000004" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Fc5-wp-Chp"/>
+                                    <constraint firstAttribute="width" constant="90" id="UmG-qB-YRf"/>
+                                </constraints>
+                                <state key="normal" title="Video Play"/>
+                                <connections>
+                                    <segue destination="zbx-v1-ocC" kind="show" identifier="videoPlay" id="TQh-Kr-ggD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-ne-ctT">
+                                <rect key="frame" x="162" y="351" width="90" height="35"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.82745105029999999" green="0.94117653369999998" blue="0.95294123890000004" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <segue destination="kx6-nP-TNo" kind="show" id="rB3-Ns-r9N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqa-86-ASb">
+                                <rect key="frame" x="162" y="416" width="90" height="35"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.82745105029999999" green="0.94117653369999998" blue="0.95294123890000004" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Merge"/>
+                                <connections>
+                                    <segue destination="uTz-0t-rb4" kind="show" id="fLv-bg-XHM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hqa-86-ASb" firstAttribute="centerX" secondItem="Q49-gX-uSx" secondAttribute="centerX" id="1cZ-9d-gen"/>
+                            <constraint firstItem="qPU-ne-ctT" firstAttribute="height" secondItem="QdL-xY-xTc" secondAttribute="height" id="7yh-Yb-0Ct"/>
+                            <constraint firstItem="hqa-86-ASb" firstAttribute="top" secondItem="qPU-ne-ctT" secondAttribute="bottom" constant="30" id="Fqy-xs-QNq"/>
+                            <constraint firstItem="qPU-ne-ctT" firstAttribute="top" secondItem="QdL-xY-xTc" secondAttribute="bottom" constant="30" id="Gl9-qp-RvO"/>
+                            <constraint firstItem="qPU-ne-ctT" firstAttribute="width" secondItem="QdL-xY-xTc" secondAttribute="width" id="SXB-d9-bUe"/>
+                            <constraint firstItem="hqa-86-ASb" firstAttribute="width" secondItem="qPU-ne-ctT" secondAttribute="width" id="YvK-cH-93x"/>
+                            <constraint firstItem="QdL-xY-xTc" firstAttribute="centerX" secondItem="Q49-gX-uSx" secondAttribute="centerX" id="bZy-MK-e1N"/>
+                            <constraint firstItem="qPU-ne-ctT" firstAttribute="centerY" secondItem="Q49-gX-uSx" secondAttribute="centerY" id="dW3-eP-yei"/>
+                            <constraint firstItem="qPU-ne-ctT" firstAttribute="centerX" secondItem="Q49-gX-uSx" secondAttribute="centerX" id="giA-Cj-Iiz"/>
+                            <constraint firstItem="hqa-86-ASb" firstAttribute="height" secondItem="qPU-ne-ctT" secondAttribute="height" id="ml7-oC-diC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="qUm-q4-buK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmf-AV-qyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="82"/>
+        </scene>
+        <!--Record Video-->
+        <scene sceneID="qqh-PP-NF6">
+            <objects>
+                <viewController id="kx6-nP-TNo" customClass="VideoRecordVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mTi-gM-Pgz"/>
+                        <viewControllerLayoutGuide type="bottom" id="72b-Nv-n5z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CbY-4w-hLw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Record Video" id="hdm-uk-Gyx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spQ-9H-aFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="541"/>
+        </scene>
+        <!--Merge Video-->
+        <scene sceneID="UaK-Cq-g1Z">
+            <objects>
+                <viewController id="uTz-0t-rb4" customClass="VideoMerge" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ITd-bG-0kY"/>
+                        <viewControllerLayoutGuide type="bottom" id="2YQ-en-g53"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K5F-9j-pcj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Merge Video" id="Fzk-Qd-1c2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fij-Jk-aEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="471"/>
+        </scene>
+        <!--Play Video-->
+        <scene sceneID="Ng4-d7-CmW">
+            <objects>
+                <viewController storyboardIdentifier="avPlayerVC" id="zbx-v1-ocC" customClass="VideoPlayVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y8t-K7-ym6"/>
+                        <viewControllerLayoutGuide type="bottom" id="CRJ-cO-Ai4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jyT-4F-gDi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-4h-eKV">
+                                <rect key="frame" x="162" y="109" width="90" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.83937026520000002" green="0.75754391030000001" blue="0.52959073680000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="X0d-Iw-BJq"/>
+                                    <constraint firstAttribute="width" constant="90" id="YlI-yY-DES"/>
+                                </constraints>
+                                <state key="normal" title="Play Video"/>
+                                <connections>
+                                    <action selector="videoPlay:" destination="zbx-v1-ocC" eventType="touchUpInside" id="3re-Y9-aR0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f5p-4h-eKV" firstAttribute="top" secondItem="y8t-K7-ym6" secondAttribute="bottom" constant="45" id="KI7-4J-S59"/>
+                            <constraint firstItem="f5p-4h-eKV" firstAttribute="centerX" secondItem="jyT-4F-gDi" secondAttribute="centerX" id="nKy-WI-hUX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Play Video" id="LW8-TX-ATO"/>
+                    <connections>
+                        <segue destination="h77-lA-hq8" kind="show" id="Sno-h4-v8Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fo3-Zr-2GU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="-419"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="JyN-15-agO">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="h77-lA-hq8" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNw-NG-f0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="-429"/>
+        </scene>
+    </scenes>
+</document>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8C5E291E1BF18D7500AB4AC4 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5E291D1BF18D7500AB4AC4 /* PageViewController.m */; };
+		8C6934641BF44C69004735A7 /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = 8C6934631BF44C69004735A7 /* hello.html */; settings = {ASSET_TAGS = (); }; };
+		8C9261701BF42DAF00960964 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 8C92616F1BF42DAF00960964 /* test.js */; };
 		8CC6C5161BF0AB49003EADE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6C5151BF0AB49003EADE8 /* main.m */; };
 		8CC6C5191BF0AB49003EADE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6C5181BF0AB49003EADE8 /* AppDelegate.m */; };
 		8CC6C51C1BF0AB49003EADE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6C51B1BF0AB49003EADE8 /* ViewController.m */; };
@@ -15,6 +17,8 @@
 		8CC6C5211BF0AB49003EADE8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC6C5201BF0AB49003EADE8 /* Images.xcassets */; };
 		8CC6C5241BF0AB49003EADE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CC6C5221BF0AB49003EADE8 /* LaunchScreen.xib */; };
 		8CC6C5301BF0AB49003EADE8 /* WebViewAssignmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6C52F1BF0AB49003EADE8 /* WebViewAssignmentTests.m */; };
+		8CDB80E91BF5B1A400EE2409 /* JScontext.html in Resources */ = {isa = PBXBuildFile; fileRef = 8CDB80E81BF5B1A400EE2409 /* JScontext.html */; settings = {ASSET_TAGS = (); }; };
+		8CDB80F31BF5D4ED00EE2409 /* jquery-1.3.2.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 8CDB80F21BF5D4ED00EE2409 /* jquery-1.3.2.min.js */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,8 @@
 /* Begin PBXFileReference section */
 		8C5E291C1BF18D7500AB4AC4 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		8C5E291D1BF18D7500AB4AC4 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		8C6934631BF44C69004735A7 /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hello.html; sourceTree = "<group>"; };
+		8C92616F1BF42DAF00960964 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		8CC6C5101BF0AB49003EADE8 /* WebViewAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC6C5141BF0AB49003EADE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC6C5151BF0AB49003EADE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +49,8 @@
 		8CC6C5291BF0AB49003EADE8 /* WebViewAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebViewAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC6C52E1BF0AB49003EADE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC6C52F1BF0AB49003EADE8 /* WebViewAssignmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewAssignmentTests.m; sourceTree = "<group>"; };
+		8CDB80E81BF5B1A400EE2409 /* JScontext.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JScontext.html; sourceTree = "<group>"; };
+		8CDB80F21BF5D4ED00EE2409 /* jquery-1.3.2.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.3.2.min.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 		8CC6C5121BF0AB49003EADE8 /* WebViewAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB80F21BF5D4ED00EE2409 /* jquery-1.3.2.min.js */,
 				8CC6C5171BF0AB49003EADE8 /* AppDelegate.h */,
 				8CC6C5181BF0AB49003EADE8 /* AppDelegate.m */,
 				8CC6C51A1BF0AB49003EADE8 /* ViewController.h */,
@@ -94,6 +103,9 @@
 				8CC6C5131BF0AB49003EADE8 /* Supporting Files */,
 				8C5E291C1BF18D7500AB4AC4 /* PageViewController.h */,
 				8C5E291D1BF18D7500AB4AC4 /* PageViewController.m */,
+				8C92616F1BF42DAF00960964 /* test.js */,
+				8C6934631BF44C69004735A7 /* hello.html */,
+				8CDB80E81BF5B1A400EE2409 /* JScontext.html */,
 			);
 			path = WebViewAssignment;
 			sourceTree = "<group>";
@@ -168,7 +180,7 @@
 		8CC6C5081BF0AB49003EADE8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					8CC6C50F1BF0AB49003EADE8 = {
@@ -205,7 +217,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC6C51F1BF0AB49003EADE8 /* Main.storyboard in Resources */,
+				8CDB80F31BF5D4ED00EE2409 /* jquery-1.3.2.min.js in Resources */,
 				8CC6C5241BF0AB49003EADE8 /* LaunchScreen.xib in Resources */,
+				8C6934641BF44C69004735A7 /* hello.html in Resources */,
+				8C9261701BF42DAF00960964 /* test.js in Resources */,
+				8CDB80E91BF5B1A400EE2409 /* JScontext.html in Resources */,
 				8CC6C5211BF0AB49003EADE8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +306,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -357,8 +374,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kojiro katagiri (HJG5WJ66YJ)";
 				INFOPLIST_FILE = WebViewAssignment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjitgroup.webview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "54340e2d-4ff9-4b48-9090-38d013fd033e";
 			};
@@ -369,8 +387,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WebViewAssignment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjitgroup.webview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -389,6 +408,7 @@
 				);
 				INFOPLIST_FILE = WebViewAssignmentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bjit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebViewAssignment.app/WebViewAssignment";
 			};
@@ -404,6 +424,7 @@
 				);
 				INFOPLIST_FILE = WebViewAssignmentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bjit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebViewAssignment.app/WebViewAssignment";
 			};

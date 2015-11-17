@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VMI-bq-cye">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VMI-bq-cye">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -13,6 +13,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iy6-Fd-cZg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="8hx-kW-eyw" kind="relationship" relationship="rootViewController" id="lcF-6v-SOk"/>
@@ -20,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtH-mK-SzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-339" y="208"/>
+            <point key="canvasLocation" x="-45" y="-122"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="b3c-Ld-Sf3">
@@ -30,7 +31,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJb-sK-7Yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="-598"/>
+            <point key="canvasLocation" x="460" y="-934"/>
         </scene>
         <!--Home-->
         <scene sceneID="oxt-bZ-eQP">
@@ -43,6 +44,7 @@
                     <view key="view" contentMode="scaleToFill" id="TZE-zY-qFw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="MvE-9U-klV">
@@ -58,14 +60,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nextButton" destination="GJj-Dp-aI2" id="gfi-Mq-kEE"/>
-                        <outlet property="prevButton" destination="FZv-cU-d2i" id="lle-MT-eOM"/>
                         <segue destination="yYC-jL-Vcx" kind="show" identifier="pageContent" id="sIR-eY-4IE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4K-ZC-6VH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="208"/>
+            <point key="canvasLocation" x="460" y="-122"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="p4N-dU-jgr">
@@ -81,9 +81,14 @@
                         <subviews>
                             <webView clipsSubviews="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NP-yV-mbv">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yYC-jL-Vcx" id="2Za-Ws-JJU"/>
+                                </connections>
                             </webView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hIb-XX-uSe" firstAttribute="top" secondItem="4NP-yV-mbv" secondAttribute="bottom" id="NoB-0M-UBB"/>
@@ -99,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hb7-c7-imd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="208"/>
+            <point key="canvasLocation" x="969" y="-122"/>
         </scene>
     </scenes>
 </document>

@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    lastIndex =0;
-    pageUrl = @[@"http://www.google.com", @"http://www.bjitgroup.com", @"http://www.apple.com"];
+    pageUrl = @[@"hello", @"JScontext"];
     
     _pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     _pageVC.dataSource = self;
@@ -43,8 +42,6 @@
     PageViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageContentVC"];
     pageContentViewController.urlString = pageUrl[index];
     pageContentViewController.pageIndex = index;
-    lastIndex = index;
-    NSLog(@"Set: %ld", (long)lastIndex);
     return pageContentViewController;
 }
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
@@ -54,7 +51,6 @@
         return nil;
     }
     index--;
-//    lastIndex = index;
     return [self viewControllerAtIndex:index];
 }
 
@@ -68,7 +64,6 @@
     if (index == [pageUrl count]) {
         return nil;
     }
-  //  lastIndex = index;
     return [self viewControllerAtIndex:index];
 }
 
@@ -101,21 +96,10 @@
                                  completion:nil];
 }
 - (IBAction)nextPage:(id)sender {
-    [self changePage:UIPageViewControllerNavigationDirectionForward];    
-//    NSLog(@"%ld", (long)lastIndex);
-//    if(lastIndex+1<[pageUrl count]){
-//        PageViewController *startingViewController = [self viewControllerAtIndex:++lastIndex];
-//        NSArray *viewControllers = @[startingViewController];
-//        [_pageVC setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-//    }
+    [self changePage:UIPageViewControllerNavigationDirectionForward];
 }
 - (IBAction)prevPage:(id)sender {
     [self changePage:UIPageViewControllerNavigationDirectionReverse];
-//    if(lastIndex>0){
-//        PageViewController *startingViewController = [self viewControllerAtIndex:--lastIndex];
-//        NSArray *viewControllers = @[startingViewController];
-//        [_pageVC setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-//    }
 }
 
 - (void)didReceiveMemoryWarning {

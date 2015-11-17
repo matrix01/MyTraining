@@ -8,38 +8,71 @@
 
 #import "PageViewController.h"
 
-@interface PageViewController ()
-
+@interface PageViewController () {
+    NSString* ret;
+    bool downScroll;
+}
 @end
 
 @implementation PageViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSString* str = request.URL.relativeString;
+    str = [str lastPathComponent];
+    NSArray* array = [str componentsSeparatedByString:@"%20"];
+    NSError *error = nil;
+    NSData *data = nil;
+    downScroll = NO;
+    if([NSJSONSerialization isValidJSONObject:array]){
+        data = [NSJSONSerialization dataWithJSONObject:array options:0 error:&error];
+        ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }
-    return self;
+    return YES;
 }
--(void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    if(self.navigationController.navigationBar.translucent == YES)
-    {
-        
-        _webView.scrollView.contentOffset = CGPointMake(_webView.frame.origin.x, _webView.frame.origin.y - 54);
-        
-    }
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    int row = 9, col=3;
+    NSString *s=[[NSString alloc] initWithFormat:@"printTable(%i, %i, '%@');",row, col,  ret];
+    [_webView stringByEvaluatingJavaScriptFromString:s];
+}
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString* s=[[NSString alloc] initWithFormat:@"hello_out();"];
+    [webView stringByEvaluatingJavaScriptFromString:s];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL *url = [NSURL URLWithString:_urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [_webView loadRequest:request];
+    [_webView.scrollView setDelegate:self];
+    /* Load The HTML file with table*/
+    NSBundle *thisBundle = [NSBundle mainBundle];
+    NSString *path = [thisBundle pathForResource:_urlString ofType:@"html"];
+    NSURL *instructionsURL = [NSURL fileURLWithPath:path];
+    [_webView loadRequest:[NSURLRequest requestWithURL:instructionsURL]];
+    /*Load HTML End*/
+}
+- (IBAction)reloadButton:(id)sender {
+    NSString *s=[[NSString alloc] initWithFormat:@"printTable('%@');",  ret];
+    [_webView stringByEvaluatingJavaScriptFromString:s];  
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
  }
-
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGPoint velocity = [[scrollView panGestureRecognizer]velocityInView:scrollView.superview];
+    if (velocity.y == 0) {
+        return;
+    }
+    if (velocity.y < -1) {
+        downScroll = YES;
+    }
+    else if (velocity.y > 1) {
+        downScroll = NO;
+    }
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if(downScroll){
+        NSString *s=[[NSString alloc] initWithFormat:@"showMore();"];
+        [_webView stringByEvaluatingJavaScriptFromString:s];
+    }
+    downScroll = NO;
+}
 @end
