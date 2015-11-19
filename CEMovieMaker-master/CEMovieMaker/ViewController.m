@@ -32,19 +32,17 @@
 
 - (void)process:(id)sender
 {
-    NSMutableArray *frames = [[NSMutableArray alloc] init];
+    NSMutableArray *frames = [@[] mutableCopy];
     
     UIImage *icon1 = [UIImage imageNamed:@"icon1"];
     UIImage *icon2 = [UIImage imageNamed:@"icon2"];
     UIImage *icon3 = [UIImage imageNamed:@"icon3"];
-    UIImage *icon4 = [UIImage imageNamed:@"test"];
     NSDictionary *settings = [CEMovieMaker videoSettingsWithCodec:AVVideoCodecH264 withWidth:icon1.size.width andHeight:icon1.size.height];
     self.movieMaker = [[CEMovieMaker alloc] initWithSettings:settings];
-    for (NSInteger i = 0; i < 10; i++) {
+    for (NSInteger i = 0; i < 50; i++) {
         [frames addObject:icon1];
         [frames addObject:icon2];
         [frames addObject:icon3];
-        [frames addObject:icon4];
     }
 
     [self.movieMaker createMovieFromImages:[frames copy] withCompletion:^(NSURL *fileURL){

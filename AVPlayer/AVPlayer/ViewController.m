@@ -119,8 +119,7 @@
     CMTime secondThird = CMTimeMakeWithSeconds(durationSeconds*2.0/3.0, 600);
     CMTime end = CMTimeMakeWithSeconds(durationSeconds, 600);
     NSArray *times = @[[NSValue valueWithCMTime:firstThird], [NSValue valueWithCMTime:secondThird], [NSValue valueWithCMTime:end]];
-    [imageGenerator generateCGImagesAsynchronouslyForTimes:times completionHandler:^(CMTime requestedTime, CGImageRef  _Nullable image, CMTime actualTime, AVAssetImageGeneratorResult result, NSError * _Nullable error) {
-        // NSLog(@"Running on %@ thread", [NSThread currentThread]);
+    [imageGenerator generateCGImagesAsynchronouslyForTimes:times completionHandler:^(CMTime requestedTime, CGImageRef image, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error) {
         NSString *requestedTimeString = (NSString*)CFBridgingRelease(CMTimeCopyDescription(NULL, requestedTime));
         NSString *actualTimeString = (NSString*)CFBridgingRelease(CMTimeCopyDescription(NULL, actualTime));
         NSLog(@"Requested: %@; actual %@", requestedTimeString,
