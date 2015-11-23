@@ -20,6 +20,7 @@
     AVAssetWriterInput *assetWriterInput;
     AVAssetWriterInputPixelBufferAdaptor *adaptor;
     NSDictionary *settings;
+    NSString *subtitle;
 }
 
 @end
@@ -28,25 +29,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    subtitle = @"This is a test. This is another test....";
 }
+//- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+//    UIGraphicsBeginImageContext(size);
+//    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+//    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return destImage;
+//}
 -(void) initialization {
     //Initialize the imageArray
     imageArray = [[NSMutableArray alloc]init];
-    UIImage *image = [UIImage imageNamed:@"maxresdefault.jpg"];
-    UIImage *image1 = [UIImage imageNamed:@"maxresdefault1.jpg"];
-    UIImage *image2 = [UIImage imageNamed:@"gradient-background.jpg"];
-    UIImage *image3 = [UIImage imageNamed:@"images.jpg"];
-    for (int i=0; i<150; i++) {
-        [imageArray addObject:image];
-        [imageArray addObject:image1];
-        [imageArray addObject:image2];
-        [imageArray addObject:image3];
-        [imageArray addObject:image];
-        [imageArray addObject:image1];
-        [imageArray addObject:image2];
-        [imageArray addObject:image3];
+    //CGSize size = self.view.frame.size;
+    for(int j=0; j<3; j++){
+        for(int i=1; i<83; i++){
+            NSString *tempName = [NSString stringWithFormat:@"image%i", i];
+            UIImage* image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:tempName ofType:@"png"]];
+            //UIImage *convImage = [self imageWithImage:image convertToSize:size];
+            [imageArray addObject:image];
+        }
     }
-    NSLog(@"Image Count: %d", [imageArray count]);
     
     //Settings for video
     settings = [self videoSettingsWithCodec:AVVideoCodecH264 withWidth:480 andHeight:640];
@@ -84,7 +87,7 @@
                                       [NSNumber numberWithInt:kCVPixelFormatType_32ARGB], kCVPixelBufferPixelFormatTypeKey, nil];
     adaptor = [[AVAssetWriterInputPixelBufferAdaptor alloc] initWithAssetWriterInput:assetWriterInput sourcePixelBufferAttributes:bufferAttributes];
     //Set frameTime
-    frameTime = CMTimeMake(1, 10);
+    frameTime = CMTimeMake(1, 4);
 }
 
 -(void)createAndSaveVideo {
@@ -97,7 +100,7 @@
     __block NSInteger imageIndex = 0;
     [assetWriterInput requestMediaDataWhenReadyOnQueue:mediaInputQueue usingBlock:^{
         while (true) {
-            NSLog(@"Image Index: %ld", (long)imageIndex);
+            //NSLog(@"Image Index: %ld", (long)imageIndex);
             if(imageIndex>=frameNumber)break;
             if(assetWriterInput.isReadyForMoreMediaData){
                 CVPixelBufferRef buffer = [self newPixelBufferFromCGImage:[[imageArray objectAtIndex:imageIndex] CGImage]];
@@ -112,7 +115,7 @@
                     }
                     CFRelease(buffer);
                     imageIndex++;
-                    NSLog(@"Image Index: %ld", (long)imageIndex);
+                    //NSLog(@"Image Index: %ld", (long)imageIndex);
                 }
             }
         }
@@ -177,11 +180,15 @@
 }
 
 - (void)exportDidFinish:(AVAssetExportSession*)session {
+    NSLog(@"Session Status: %ld", (long)AVAssetExportSessionStatusCompleted);
     if (session.status == AVAssetExportSessionStatusCompleted) {
         NSURL *outputURL = session.outputURL;
+        NSLog(@"%@ Here To Save", outputURL);
+
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
         if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:outputURL]) {
             [library writeVideoAtPathToSavedPhotosAlbum:outputURL completionBlock:^(NSURL *assetURL, NSError *error){
+                NSLog(@"%@ Here To Save", outputURL);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (error) {
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Video Saving Failed"
@@ -196,16 +203,22 @@
             }];
         }
     }
+    else if(session.status == AVAssetExportSessionStatusFailed){
+        NSLog(@"Error: %@", session.error);
+    }
 }
 
 -(void)addAudioToVideo {
     //////////////  OK now add an audio file to move file  /////////////////////
-    AVMutableComposition* mixComposition = [AVMutableComposition composition];
+    
     
     NSString *bundleDirectory = [[NSBundle mainBundle] bundlePath];
     // audio input file...
     NSString *audio_inputFilePath = [bundleDirectory stringByAppendingPathComponent:@"Prapty.mp3"];
     NSURL    *audio_inputFileUrl = [NSURL fileURLWithPath:audio_inputFilePath];
+    
+//    NSString *sub_inputFilePath = [bundleDirectory stringByAppendingPathComponent:@"edge.srt"];
+//    NSURL    *sub_inputFileUrl = [NSURL fileURLWithPath:sub_inputFilePath];
     
     // this is the video file that was just written above, full path to file is in --> videoOutputPath
     NSURL    *video_inputFileUrl = assetUrl;
@@ -224,21 +237,91 @@
     
     //nextClipStartTime = CMTimeAdd(nextClipStartTime, a_timeRange.duration);
     
-    AVURLAsset* audioAsset = [[AVURLAsset alloc]initWithURL:audio_inputFileUrl options:nil];
-    CMTime presentTime = CMTimeAdd(kCMTimeZero, frameTime);
-    CMTimeRange audio_timeRange = CMTimeRangeMake(kCMTimeZero, audioAsset.duration);
-    AVMutableCompositionTrack *b_compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-    [b_compositionAudioTrack insertTimeRange:audio_timeRange ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:nextClipStartTime error:nil];
+    AVMutableComposition* mixComposition = [AVMutableComposition composition];
     
-    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:video_inputFileUrl options:nil];
-    CMTimeRange video_timeRange = CMTimeRangeMake(kCMTimeZero,videoAsset.duration);
+    //Video And Audio Composition track
     AVMutableCompositionTrack *a_compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
-    [a_compositionVideoTrack insertTimeRange:audio_timeRange ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] atTime:nextClipStartTime error:nil];
+    AVMutableCompositionTrack *b_compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+//    AVMutableCompositionTrack *c_compositionSubTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeSubtitle preferredTrackID:kCMPersistentTrackID_Invalid];
     
+    
+    //Video and Audio Asset
+    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:video_inputFileUrl options:nil];
+    AVURLAsset* audioAsset = [[AVURLAsset alloc]initWithURL:audio_inputFileUrl options:nil];
+//    AVURLAsset* subAsset = [[AVURLAsset alloc]initWithURL:sub_inputFileUrl options:nil];
+    
+    // Get the first video track from each asset.
+    AVAssetTrack *videoAssetTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    AVAssetTrack *audioAssetTrack = [[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+//    AVAssetTrack *subAssetTrack = [[subAsset tracksWithMediaType:AVMediaTypeSubtitle] objectAtIndex:0];
+    
+    //Get time duration
+    CMTimeRange video_timeRange = CMTimeRangeMake(kCMTimeZero,videoAsset.duration);
+//    CMTimeRange audio_timeRange = CMTimeRangeMake(kCMTimeZero, audioAsset.duration);
+    
+    //add assetTrack to composition
+    [a_compositionVideoTrack insertTimeRange:video_timeRange ofTrack:videoAssetTrack atTime:nextClipStartTime error:nil];
+    [b_compositionAudioTrack insertTimeRange:video_timeRange ofTrack:audioAssetTrack atTime:nextClipStartTime error:nil];
+//    [c_compositionSubTrack insertTimeRange:video_timeRange ofTrack:subAssetTrack atTime:nextClipStartTime error:nil];
+    
+    //instructions
+    AVMutableVideoCompositionInstruction *mainInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+   // CMTimeRange time = CMTimeRangeMake(kCMTimeZero,CMTimeMake(5, 1));
+    mainInstruction.timeRange = video_timeRange;
+    
+    //Instruction Layer
+    AVMutableVideoCompositionLayerInstruction *videolayerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:a_compositionVideoTrack];
+    
+    UIImageOrientation videoAssetOrientation_  = UIImageOrientationUp;
+    BOOL isVideoAssetPortrait_  = NO;
+    CGAffineTransform videoTransform = videoAssetTrack.preferredTransform;
+    if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
+        videoAssetOrientation_ = UIImageOrientationRight;
+        isVideoAssetPortrait_ = YES;
+    }
+    if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
+        videoAssetOrientation_ =  UIImageOrientationLeft;
+        isVideoAssetPortrait_ = YES;
+    }
+    if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
+        videoAssetOrientation_ =  UIImageOrientationUp;
+    }
+    if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
+        videoAssetOrientation_ = UIImageOrientationDown;
+    }
+    //CMTime subTime = CMTimeAdd(kCMTimeZero, frameTime);
+    [videolayerInstruction setTransform:videoAssetTrack.preferredTransform atTime:kCMTimeZero];
+
+    [videolayerInstruction setOpacity:0.0 atTime:videoAsset.duration];
+    
+    mainInstruction.layerInstructions = [NSArray arrayWithObjects:videolayerInstruction,nil];
+    
+    AVMutableVideoComposition *mainCompositionInst = [AVMutableVideoComposition videoComposition];
+    
+    CGSize naturalSize;
+    if(isVideoAssetPortrait_){
+        naturalSize = CGSizeMake(videoAssetTrack.naturalSize.height, videoAssetTrack.naturalSize.width);
+    } else {
+        naturalSize = videoAssetTrack.naturalSize;
+    }
+    
+    float renderWidth, renderHeight;
+    renderWidth = naturalSize.width;
+    renderHeight = naturalSize.height;
+    mainCompositionInst.renderSize = CGSizeMake(renderWidth, renderHeight);
+    mainCompositionInst.instructions = [NSArray arrayWithObject:mainInstruction];
+    mainCompositionInst.frameDuration = CMTimeMake(1, 4);
+    
+    [self applyVideoEffectsToComposition:mainCompositionInst size:naturalSize];
+    
+    //Export Session
     AVAssetExportSession* _assetExport = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetHighestQuality];
-    //_assetExport.outputFileType = @"com.apple.quicktime-movie";
+    
+    //Export
     _assetExport.outputURL=outputFileUrl;
     _assetExport.outputFileType = AVFileTypeQuickTimeMovie;
+    _assetExport.shouldOptimizeForNetworkUse = YES;
+    _assetExport.videoComposition = mainCompositionInst;
     [_assetExport exportAsynchronouslyWithCompletionHandler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [self exportDidFinish:_assetExport];
@@ -247,6 +330,66 @@
 
     
 }
+- (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition size:(CGSize)size {
+    // 1 - Set up the text layer
+    CATextLayer *subtitle1Text = [[CATextLayer alloc] init];
+    [subtitle1Text setFont:@"Helvetica-Bold"];
+    [subtitle1Text setFontSize:36];
+    [subtitle1Text setFrame:CGRectMake(0, 0, size.width, 100)];
+    [subtitle1Text setString:subtitle];
+    [subtitle1Text setAlignmentMode:kCAAlignmentCenter];
+    [subtitle1Text setForegroundColor:[[UIColor whiteColor] CGColor]];
+    
+    // 2 - The usual overlay
+    CALayer *overlayLayer = [CALayer layer];
+    [overlayLayer addSublayer:subtitle1Text];
+    overlayLayer.borderColor = [[UIColor redColor] CGColor];
+    overlayLayer.borderWidth = 2.0;
+    overlayLayer.frame = CGRectMake(0, 0, size.height, size.width);
+    [overlayLayer setMasksToBounds:YES];
+    
+    CATransition* transition = [CATransition animation];
+    transition.startProgress = 0;
+    transition.endProgress = -1.0;
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromRight;
+    transition.beginTime = AVCoreAnimationBeginTimeAtZero;
+    transition.duration = 5.0;
+    
+    [overlayLayer addAnimation:transition forKey:@"transition"];
+//    CABasicAnimation *animation
+//    =[CABasicAnimation animationWithKeyPath:@"opacity"];
+//    animation.duration=3.0;
+//    animation.repeatCount=5;
+//    animation.autoreverses=YES;
+//    // animate from fully visible to invisible
+//    animation.fromValue=[NSNumber numberWithFloat:1.0];
+//    animation.toValue=[NSNumber numberWithFloat:0.0];
+//    animation.beginTime = AVCoreAnimationBeginTimeAtZero;
+//    [overlayLayer addAnimation:animation forKey:@"animateOpacity"];
+    
+//    CABasicAnimation *animation =
+//    [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+//    animation.duration=1.0;
+//    animation.repeatCount=20;
+//    animation.autoreverses=YES;
+//    // animate from half size to full size
+//    animation.fromValue=[NSNumber numberWithFloat:0.5];
+//    animation.toValue=[NSNumber numberWithFloat:1.0];
+//    animation.beginTime = AVCoreAnimationBeginTimeAtZero;
+//    [overlayLayer addAnimation:animation forKey:@"scale"];
+    
+    CALayer *parentLayer = [CALayer layer];
+    CALayer *videoLayer = [CALayer layer];
+    parentLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    videoLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    [parentLayer addSublayer:videoLayer];
+    [parentLayer addSublayer:overlayLayer];
+    
+    composition.animationTool = [AVVideoCompositionCoreAnimationTool
+                                 videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
