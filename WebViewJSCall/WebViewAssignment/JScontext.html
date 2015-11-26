@@ -1,0 +1,34 @@
+<!Doctype html>
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes" />
+            <script>
+                function addtd(){
+                    var table1 = document.getElementsByTagName('table')[0];
+                    var rowrow =  document.createElement('tr');
+                    var foods = new Array();
+                    
+                    foods[0] = "milk" ;
+                    foods[1] = "meat" ;
+                    foods[2] = "fruit" ;
+                    foods[3] = "fish" ;
+                    foods[4] = "salad" ;
+                    
+                    for ( i=0; i <foods.length; i++) {
+                        var cell1  =  document.createElement('td');
+                        var text1 = document.createTextNode(foods[i]);
+                        cell1.appendChild(text1);
+                        rowrow.appendChild(cell1);
+                    }
+                    table1.appendChild(rowrow);
+                }
+            </script>
+    </head>
+    <body>
+        <h1><center>Output</center></h1>
+        <div id="divfood"> </div>
+        <button onclick="addtd()">Click me</button>
+        <table border="2" id="tabletable" cellspacing="5" >
+        </table>
+    </body>
+</html>

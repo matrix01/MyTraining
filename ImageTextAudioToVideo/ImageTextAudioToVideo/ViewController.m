@@ -330,6 +330,21 @@
 
     
 }
+-(void)pauseLayer:(CALayer*)layer {
+    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    layer.speed = 0.0;
+    layer.timeOffset = pausedTime;
+}
+
+-(void)resumeLayer:(CALayer*)layer {
+    CFTimeInterval pausedTime = [layer timeOffset];
+    layer.speed = 1.0;
+    layer.timeOffset = 0.0;
+    layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    layer.beginTime = timeSincePause;
+}
+
 - (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition size:(CGSize)size {
     // 1 - Set up the text layer
     CATextLayer *subtitle1Text = [[CATextLayer alloc] init];
@@ -348,15 +363,19 @@
     overlayLayer.frame = CGRectMake(0, 0, size.height, size.width);
     [overlayLayer setMasksToBounds:YES];
     
+    CFTimeInterval currentTime = CACurrentMediaTime();
+    CFTimeInterval currentTimeInSuperLayer = [overlayLayer convertTime:currentTime fromLayer:nil];
+    
     CATransition* transition = [CATransition animation];
     transition.startProgress = 0;
-    transition.endProgress = -1.0;
+    transition.endProgress = 1.0;
     transition.type = kCATransitionPush;
     transition.subtype = kCATransitionFromRight;
-    transition.beginTime = AVCoreAnimationBeginTimeAtZero;
+    transition.beginTime = currentTimeInSuperLayer+5;
     transition.duration = 5.0;
     
     [overlayLayer addAnimation:transition forKey:@"transition"];
+    
 //    CABasicAnimation *animation
 //    =[CABasicAnimation animationWithKeyPath:@"opacity"];
 //    animation.duration=3.0;
