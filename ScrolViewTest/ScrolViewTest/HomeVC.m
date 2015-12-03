@@ -80,11 +80,28 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
+- (void)viewWillLayoutSubviews;
+{
+    [super viewWillLayoutSubviews];
+    UICollectionViewFlowLayout *flowLayout = (id)self.collectionView.collectionViewLayout;
+    
+//    if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation)) {
+//        flowLayout.itemSize = CGSizeMake(170.f, 170.f);
+//    } else {
+//        flowLayout.itemSize = CGSizeMake(192.f, 192.f);
+//    }
+    
+    [flowLayout invalidateLayout]; //force the elements to get laid out again with the new size
+}
 #pragma mark – UICollectionViewDelegateFlowLayout
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 //    NSString *searchTerm = self.searches[indexPath.section];
 //    FlickrPhoto *photo = self.searchResults[searchTerm][indexPath.row];
-    return CGSizeMake(self.collectionView.frame.size.width /3, 150);
+    CGFloat height = self.collectionView.frame.size.height;
+    CGFloat width = self.collectionView.frame.size.width;
+    if(height>width)
+    return CGSizeMake((width /2)-10, 120);
+    else return CGSizeMake((width /4)-10, 120);
 }
 //-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
 //    return 30.0;
