@@ -1,0 +1,2 @@
+1. https://github.com/cameronehrlich/CEMovieMaker
+2. http://stackoverflow.com/questions/3741323/how-do-i-export-uiimage-array-as-a-movie/3742212#3742212

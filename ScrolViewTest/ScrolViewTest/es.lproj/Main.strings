@@ -1,0 +1,18 @@
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "Mh2-Bi-SGJ"; */
+"Mh2-Bi-SGJ.title" = "Home";
+
+/* Class = "UILabel"; text = "Select Language"; ObjectID = "ZYn-e2-4tu"; */
+"ZYn-e2-4tu.text" = "Select Language";
+
+/* Class = "UILabel"; text = "WELCOME"; ObjectID = "bza-ZG-oEv"; */
+"bza-ZG-oEv.text" = "WELCOME";
+
+/* Class = "UINavigationItem"; title = "Lagnuage Selection"; ObjectID = "g2t-zt-2bX"; */
+"g2t-zt-2bX.title" = "Lagnuage Selection";
+
+/* Class = "UIButton"; normalTitle = "ENGLISH"; ObjectID = "sen-ww-aYv"; */
+"sen-ww-aYv.normalTitle" = "ENGLISH";
+
+/* Class = "UIButton"; normalTitle = "বাংলা"; ObjectID = "tZE-3g-8ES"; */
+"tZE-3g-8ES.normalTitle" = "বাংলা";

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="69F-J2-xDR">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="LOP-bG-xAc">
+            <objects>
+                <navigationController id="69F-J2-xDR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Mx-Ea-NvY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Yc2-D0-Fyg" kind="relationship" relationship="rootViewController" id="ToE-du-Wza"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ln0-mR-iaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-664" y="-456"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7Yh-1p-VJJ">
+            <objects>
+                <viewController id="Yc2-D0-Fyg" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KaF-RH-U9b"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZRo-mj-3bF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jMe-xS-Tlz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GIf-2c-G0d">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yc2-D0-Fyg" id="8mU-RV-JZh"/>
+                                    <outlet property="delegate" destination="Yc2-D0-Fyg" id="9h9-Ip-i1p"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GIf-2c-G0d" firstAttribute="top" secondItem="jMe-xS-Tlz" secondAttribute="top" id="MgK-2l-D2x"/>
+                            <constraint firstItem="GIf-2c-G0d" firstAttribute="leading" secondItem="jMe-xS-Tlz" secondAttribute="leading" id="Ogq-7y-EQl"/>
+                            <constraint firstAttribute="trailing" secondItem="GIf-2c-G0d" secondAttribute="trailing" id="hfr-qG-UEc"/>
+                            <constraint firstItem="ZRo-mj-3bF" firstAttribute="top" secondItem="GIf-2c-G0d" secondAttribute="bottom" id="tGD-b2-xpV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1cq-3t-XdZ">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="a7A-kb-JTt">
+                            <connections>
+                                <action selector="toggleEditMode:" destination="Yc2-D0-Fyg" id="N3n-lq-wAl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myTable" destination="GIf-2c-G0d" id="nfd-tN-ywS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2VU-IG-03S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="-531"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="160" id="JhJ-vo-Q2F" customClass="CustomCell">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JhJ-vo-Q2F" id="eJo-Qp-3k2">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyq-Rl-ObV" userLabel="Container">
+                        <rect key="frame" x="0.0" y="0.0" width="470" height="159"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHm-fk-eLM" userLabel="leftView">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="159"/>
+                                <color key="backgroundColor" red="0.50053033690000004" green="0.80277383209999997" blue="0.77809428759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="et5-Ro-nGN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TE3-Ur-bQZ" userLabel="topView">
+                                <rect key="frame" x="0.0" y="0.0" width="470" height="159"/>
+                                <color key="backgroundColor" red="0.49724731129999999" green="0.76189630679999998" blue="0.60804308689999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TE3-Ur-bQZ" secondAttribute="trailing" id="5aP-MR-4jY"/>
+                            <constraint firstItem="TE3-Ur-bQZ" firstAttribute="leading" secondItem="dyq-Rl-ObV" secondAttribute="leading" id="LAk-Lw-wCe"/>
+                            <constraint firstAttribute="bottom" secondItem="TE3-Ur-bQZ" secondAttribute="bottom" id="SJO-kc-At2"/>
+                            <constraint firstItem="WHm-fk-eLM" firstAttribute="leading" secondItem="dyq-Rl-ObV" secondAttribute="leading" id="UzP-eV-9Am"/>
+                            <constraint firstItem="WHm-fk-eLM" firstAttribute="top" secondItem="dyq-Rl-ObV" secondAttribute="top" id="i6F-up-q90"/>
+                            <constraint firstItem="TE3-Ur-bQZ" firstAttribute="top" secondItem="dyq-Rl-ObV" secondAttribute="top" id="rfy-mi-UVW"/>
+                            <constraint firstAttribute="bottom" secondItem="WHm-fk-eLM" secondAttribute="bottom" id="x0Q-TU-nUd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dyq-Rl-ObV" firstAttribute="top" secondItem="eJo-Qp-3k2" secondAttribute="top" id="Ihd-nm-CtY"/>
+                    <constraint firstItem="dyq-Rl-ObV" firstAttribute="leading" secondItem="eJo-Qp-3k2" secondAttribute="leading" id="el2-eA-Hwx"/>
+                    <constraint firstAttribute="bottom" secondItem="dyq-Rl-ObV" secondAttribute="bottom" id="ltu-TG-jLr"/>
+                    <constraint firstAttribute="trailing" secondItem="dyq-Rl-ObV" secondAttribute="trailing" id="yUM-4l-uf4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="leftView" destination="WHm-fk-eLM" id="B24-WQ-2LW"/>
+                <outlet property="topView" destination="TE3-Ur-bQZ" id="iKR-ZN-x9G"/>
+            </connections>
+            <point key="canvasLocation" x="312" y="188"/>
+        </tableViewCell>
+    </objects>
+</document>

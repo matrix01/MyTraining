@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="PersonInfo" representedClassName="PersonInfo" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonTable" inverseName="relationship" inverseEntity="PersonTable" syncable="YES"/>
+    </entity>
+    <entity name="PersonTable" representedClassName="PersonTable" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roll" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonInfo" inverseName="relationship" inverseEntity="PersonInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PersonTable" positionX="-45" positionY="0" width="128" height="118"/>
+        <element name="PersonInfo" positionX="115" positionY="-0" width="128" height="103"/>
+    </elements>
+</model>
